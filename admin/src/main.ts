@@ -1,6 +1,12 @@
 import { createApp } from "vue";
 import App from "./App.vue";
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 import router from "./router";
-import store from "./store";
+import './router/permission'
+import store from "@/store/index";
+// @ts-ignore
+import Mock from 'mockjs'
+import "./mock/index"
 
-createApp(App).use(store).use(router).mount("#app");
+createApp(App).use(Antd).use(Mock).use(store).use(router).mount("#app");

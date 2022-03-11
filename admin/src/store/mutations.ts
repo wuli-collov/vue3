@@ -1,40 +1,33 @@
-import { createStore } from 'vuex'
-import mutations from './mutations'
-import state from './state'
+import { value } from '@/utils/variable'
 import {asyncRoutes} from "@/router/routers";
-export default createStore({
-    // @ts-ignore
-    state,
-    // @ts-ignore
-    mutations,
-    actions: {
-        getRoles(context): any {
-            // @ts-ignore
-            return new Promise(resolve => {
-                const roles: [string] = ['admin']
-                // @ts-ignore
-                context.state.roles=roles || []
-                resolve({roles})
-            })
-        },
-        generateRoutes(context,roles: [string]): any {
-            return new Promise(resolve => {
-                let accessedRoutes;
-                if (roles.includes('admin')) {
-                    accessedRoutes = asyncRoutes || []
-                } else {
-                    accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
-                }
-                resolve(accessedRoutes)
-            })
-        }
+import { unref } from 'vue'
+export default {
+    SET_TOKEN(state:any,val:string=''):void{
+        val? localStorage.setItem(value.TOKEN,val):localStorage.removeItem(value.TOKEN)
     },
-    getters: {
-        getLayout: (state) => {
-            return state.layout
-        }
+
+    getRoles(state:any): any {
+        // @ts-ignore
+        return new Promise(resolve => {
+            const roles: [string] = ['admin']
+            // @ts-ignore
+            state.roles = roles || []
+            resolve({roles})
+        })
+    },
+    generateRoutes(state:any,roles: [string]): any {
+        return new Promise(resolve => {
+            let accessedRoutes;
+            if (roles.includes('admin')) {
+                accessedRoutes = asyncRoutes || []
+            } else {
+                accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
+            }
+            resolve(accessedRoutes)
+        })
     }
-})
+}
+
 
 function filterAsyncRoutes(routers: any, roles: [string]):any {
     let res:any = []
@@ -49,6 +42,7 @@ function filterAsyncRoutes(routers: any, roles: [string]):any {
     })
     return res
 }
+
 /**
  * 根据路由meta.role 确定是否当前用户拥有访问权限
  * @roles 用户拥有角色
