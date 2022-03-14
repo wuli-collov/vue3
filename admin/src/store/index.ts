@@ -32,7 +32,11 @@ export default createStore({
     getters: {
         getLayout: (state) => {
             return state.layout
-        }
+        },
+        getCachedViews: (state) => {
+            return Array.from(state.cachedViews)
+        },
+
     }
 })
 

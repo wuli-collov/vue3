@@ -8,5 +8,6 @@ export default {
     },
     mobile:false,
     collapse:false,
+    cachedViews: new Set(),
     roles:[]
 }

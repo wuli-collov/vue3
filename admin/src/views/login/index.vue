@@ -13,9 +13,6 @@ export default defineComponent({
   name: "Home",
   components:{Login},
   setup(){
-    provide('clickTest',()=>{
-      debugger
-    })
   }
 });
 </script>
