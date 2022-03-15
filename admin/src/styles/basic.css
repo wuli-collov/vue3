@@ -1,0 +1,52 @@
+.border-solid{
+    border-style: solid;
+}
+.flex{
+    display: flex;
+}
+.center{
+    justify-content: center;
+    text-align: center;
+}
+.align-center{
+    align-items: center;
+}
+.bb{
+    box-sizing: border-box;
+}
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}
+.w-screen{
+    width: 100vw;
+}
+.h-screen{
+    height: 100vh;
+}
+.cursor{
+    cursor: pointer;
+}
+.header-hover:hover{
+    background: var(--top-header-hover-color);
+}
+.auto{
+    overflow: auto;
+}
+.o-y{
+    overflow-y: auto;
+}
+.o-x{
+    overflow-x: auto;
+}
+.s-b-s::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+    background: #ffffff;
+}
+.s-b-s::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 100px;
+}

@@ -1,8 +1,8 @@
 <template>
-  <div class="left" :class="[collapsed?'':'collapsed']"><Menu mode="inline" theme="dark" ref="myMenu"></Menu></div>
-  <div class="right">
-    <div class="header">
-      <div @click="toggleCollapsed" class="toggle">
+  <div class="auto h-screen s-b-s" :class="[collapsed?'':'w-200']"><Menu mode="inline" theme="dark" ref="myMenu"></Menu></div>
+  <div class="flex-1">
+    <div class="header flex align-center border-bottom-width-1 border-solid">
+      <div @click="toggleCollapsed" class="header-hover h-full bb cursor flex align-center center m-r-12 w-48">
         <MenuUnfoldOutlined v-if="collapsed" />
         <MenuFoldOutlined v-else />
       </div>
@@ -51,36 +51,7 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="less">
-.left{
-  height: 100vh;
-  overflow: auto;
-}
-.collapsed{
-  width: 200px;
-}
-.left::-webkit-scrollbar {
-  width: 4px;
-  height: 8px;
-  background: #ffffff;
-}
-.left::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 100px;
-}
-.right{
-  flex: 1;
-}
 .header{
-  display: flex;
-  align-items: center;
-}
-.toggle{
-  width: 48px;
-  box-sizing: border-box;
-  padding: 1px 10px 0;
-  cursor: pointer;
-  &:hover{
-    background-color: var(--top-header-hover-color);
-  }
+  height: var(--logo-height);
 }
 </style>
