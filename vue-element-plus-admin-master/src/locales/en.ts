@@ -64,7 +64,7 @@ export default {
     tagsView: 'Tags view',
     logo: 'Logo',
     greyMode: 'Grey mode',
-    fixedHeader: 'Fixed header',
+    fixedHeader: 'Fixed user',
     headerTheme: 'Header theme',
     cutMenu: 'Cut Menu',
     copy: 'Copy',

@@ -18,7 +18,7 @@ const columns = reactive<TableColumn[]>([
   },
   {
     field: 'content',
-    label: t('tableDemo.header'),
+    label: t('tableDemo.user'),
     children: [
       {
         field: 'title',

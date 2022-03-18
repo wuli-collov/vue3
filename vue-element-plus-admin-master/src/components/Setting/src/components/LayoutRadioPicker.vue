@@ -5,7 +5,7 @@ import { useDesign } from '@/hooks/web/useDesign'
 
 const { getPrefixCls } = useDesign()
 
-const prefixCls = getPrefixCls('layout-radio-picker')
+const prefixCls = getPrefixCls('user-radio-picker')
 
 const appStore = useAppStore()
 

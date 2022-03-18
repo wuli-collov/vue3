@@ -61,7 +61,7 @@ export default defineConfig({
           alignItems: 'center',
           transition: 'background var(--transition-time-02)',
           '&:hover': {
-            backgroundColor: 'var(--top-header-hover-color)'
+            backgroundColor: 'var(--top-user-hover-color)'
           }
         },
         ...obj

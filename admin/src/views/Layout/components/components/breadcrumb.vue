@@ -32,7 +32,7 @@ export default defineComponent({
             breadcrumbName: 'General',
           },
           {
-            path: '/layout',
+            path: '/user',
             breadcrumbName: 'Layout',
           },
           {

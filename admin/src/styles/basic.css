@@ -41,6 +41,16 @@
 .o-x{
     overflow-x: auto;
 }
+
+.s-b-s-0::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+    background: #ffffff;
+}
+.s-b-s-0::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
 .s-b-s::-webkit-scrollbar {
     width: 4px;
     height: 8px;
@@ -49,4 +59,7 @@
 .s-b-s::-webkit-scrollbar-thumb {
     background: #ffffff;
     border-radius: 100px;
+}
+.ant-menu-vertical{
+    border: 0 !important;
 }

@@ -52,6 +52,7 @@ export default defineComponent({
 each(@k, {
   .border-width-@{value} {
     border-width: (@value * 1px);
+    border-color: var(--top-tool-border-color);
   }
   .border-bottom-width-@{value} {
     border: 0;

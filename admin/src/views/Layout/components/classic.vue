@@ -9,6 +9,9 @@
       <breadcrumb style="flex: 1"></breadcrumb>
       <userInfo></userInfo>
     </div>
+    <div class="tag-bar">
+      <tagsView></tagsView>
+    </div>
     <slot></slot>
   </div>
 </template>
@@ -16,6 +19,7 @@
 import {defineComponent,ref,provide} from 'vue'
 import Menu from './components/Menu.vue'
 import userInfo from './components/userInfo.vue'
+import tagsView from "@/views/Layout/components/components/tagsView.vue";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -27,7 +31,8 @@ export default defineComponent({
     MenuUnfoldOutlined,
     userInfo,
     Menu,
-    breadcrumb
+    breadcrumb,
+    tagsView
   },
   setup(){
     const collapsed = ref(false)

@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 import mutations from './mutations'
 import state from './state'
 import {asyncRoutes} from "@/router/routers";
+import user from "@/store/modules/user";
 export default createStore({
     // @ts-ignore
     state,
@@ -37,6 +38,9 @@ export default createStore({
             return Array.from(state.cachedViews)
         },
 
+    },
+    modules:{
+        user,
     }
 })
 

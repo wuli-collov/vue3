@@ -44,9 +44,9 @@ const setHeaderTheme = (color: string) => {
   const textColor = isDarkColor ? '#fff' : 'inherit'
   const textHoverColor = isDarkColor ? lighten(color!, 6) : '#f6f6f6'
   const topToolBorderColor = isDarkColor ? color : '#eee'
-  setCssVar('--top-header-bg-color', color)
-  setCssVar('--top-header-text-color', textColor)
-  setCssVar('--top-header-hover-color', textHoverColor)
+  setCssVar('--top-user-bg-color', color)
+  setCssVar('--top-user-text-color', textColor)
+  setCssVar('--top-user-hover-color', textHoverColor)
   setCssVar('--top-tool-border-color', topToolBorderColor)
   appStore.setTheme({
     topHeaderBgColor: color,
@@ -207,7 +207,7 @@ const clear = () => {
       <ThemeSwitch />
 
       <!-- 布局 -->
-      <ElDivider>{{ t('setting.layout') }}</ElDivider>
+      <ElDivider>{{ t('setting.user') }}</ElDivider>
       <LayoutRadioPicker />
 
       <!-- 系统主题 -->
