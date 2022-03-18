@@ -25,6 +25,8 @@ export default defineComponent({
   width: 0;
   height: 38px;
   overflow-x: auto;
+  top: 2px;
+  position: relative;
   flex: 1;
 }
 .close-icon{
