@@ -302,9 +302,9 @@ export default {
   },
   highlightDemo: {
     highlight: '高亮',
-    message: '种一棵树最好的时间是十年前，其次就是现在。',
-    keys1: '十年前',
-    keys2: '现在'
+    message: '012345',
+    keys1: '1',
+    keys2: '3'
   },
   infotipDemo: {
     infotip: '信息提示',

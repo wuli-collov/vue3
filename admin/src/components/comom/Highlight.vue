@@ -40,8 +40,6 @@ export default defineComponent({
         if(regexp.test(m)){
           let matchs = m.match(/[0-9]/)||[0]
           let i = matchs[0]
-          // var i= m.match(regexp)
-          console.log(m,i)
           return m.replace(m,renderDom(i))
         }
         return m
