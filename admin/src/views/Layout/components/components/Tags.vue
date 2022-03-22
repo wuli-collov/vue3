@@ -1,20 +1,41 @@
 <template>
-<div class="tags-wrap s-b-s-0 flex flex-align">
-  <span class="v-tags-view__item active" v-for="item in 24">
-    <span>name</span>
-    <span class="close-icon iconfont icon-close "> </span>
+<div class="tags-wrap s-b-s-0 flex flex-align" id="scrollTag">
+  <span class="v-tags-view__item active" :ref="doms" v-for="(item,index) in list" @click="toChoose(index)">
+    <span>{{ index }}</span>
+    <span class="close-icon iconfont icon-close" @click.stop="remove(index)"> </span>
   </span>
 </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent,ref,computed } from 'vue'
+import {scrollIntoView} from '@/hooks/useScroll'
+import { useStore } from 'vuex'
 export default defineComponent({
   components: {
   },
   setup(){
-
+    const arr= ref([])
+    const doms = (el: HTMLElement) => {
+      // 断言为HTMLElement类型的数组
+      (arr.value as Array<HTMLElement>).push(el);
+    };
+    const store = useStore()
+    /*选择数据*/
+    const toChoose = function (index:number){
+      let ele = arr.value[index]
+      scrollIntoView(ele)
+    }
+    /*获取*/
+    const list = computed(()=>store.state.user.tags)
+    /*删除*/
+    const remove = function (index:number){
+      store.dispatch('removeTag',index)
+    }
     return{
-
+      list,
+      remove,
+      doms,
+      toChoose
     }
   }
 })
@@ -27,6 +48,7 @@ export default defineComponent({
   overflow-x: auto;
   top: 2px;
   position: relative;
+  user-select: none;
   flex: 1;
 }
 .close-icon{
@@ -55,7 +77,7 @@ export default defineComponent({
   position: relative;
 }
 .v-tags-view__item.active{
-  background-color: var(--admin-color-primary);
+  background-color: #409EFFFF;
   color: #ffffff;
 }
 

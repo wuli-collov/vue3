@@ -12,6 +12,14 @@ export const constRouter:Array<RouteRecordRaw>=[
         path: "/",
         name: "Home",
         component: Layout,
+        redirect:'/index',
+        children:[
+            {
+                path: "/index",
+                name: "index",
+                component:() => import("../views/user/index.vue"),
+            }
+        ]
     },
     {
         path: "/about",
