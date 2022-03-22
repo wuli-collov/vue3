@@ -38,7 +38,7 @@ export default defineComponent({
       const regexp = /^@@[0-9]@@*$/
       const arr:Array<string>  = textArray.map((m)=>{
         if(regexp.test(m)){
-          let matchs = m.match(/[0-9]/)||[0]
+          let matchs:any = m.match(/[0-9]/)||[0]
           let i = matchs[0]
           return m.replace(m,renderDom(i))
         }
