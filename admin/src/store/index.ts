@@ -3,6 +3,7 @@ import mutations from './mutations'
 import state from './state'
 import {asyncRoutes} from "@/router/routers";
 import user from "@/store/modules/user";
+import config from "@/store/modules/config";
 export default createStore({
     // @ts-ignore
     state,
@@ -41,6 +42,7 @@ export default createStore({
     },
     modules:{
         user,
+        config
     }
 })
 

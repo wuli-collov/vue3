@@ -1,6 +1,6 @@
 <template>
 <div class="tags-wrap s-b-s-0 flex flex-align" id="scrollTag">
-  <span class="v-tags-view__item active" :ref="doms" v-for="(item,index) in list" @click="toChoose(index)">
+  <span class="v-tags-view__item" :ref="doms" v-for="(item,index) in list" @click="toChoose(index)">
     <span>{{ index }}</span>
     <span class="close-icon iconfont icon-close" @click.stop="remove(index)"> </span>
   </span>
@@ -62,22 +62,21 @@ export default defineComponent({
 }
 .v-tags-view__item {
   display: inline-block;
-  position: relative;
   top: 2px;
   height: 30px;
   padding-right: 25px;
   line-height:30px;
   font-size: 12px;
-  cursor: pointer;
   margin-left: 4px;
   box-sizing: border-box;
   padding-left: 15px;
   white-space: nowrap;
   border: 1px solid #d9d9d9;
   position: relative;
+  cursor:pointer;
 }
 .v-tags-view__item.active{
-  background-color: #409EFFFF;
+  background-color: var(--elcolor-primary);
   color: #ffffff;
 }
 

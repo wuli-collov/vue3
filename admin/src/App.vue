@@ -7,9 +7,14 @@
   </router-view>
 </template>
 <script lang="ts">
-import { defineComponent, inject } from "vue";
+import { defineComponent, inject,onMounted } from "vue";
+import {useStore} from 'vuex'
 export default defineComponent({
   setup(){
+    const store = useStore()
+    onMounted(()=>{
+      store.commit('setCssVarTheme')
+    })
   }
 })
 </script>
